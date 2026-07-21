@@ -1,0 +1,35 @@
+.home {
+    min-height: 100vh;
+    background: linear-gradient(180deg, #f8fafc, #eef4ff);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 30px;
+}
+
+.titulo {
+    font-size: 3rem;
+    color: #1E3A8A;
+    margin-bottom: 15px;
+}
+
+.subtitulo {
+    font-size: 1.3rem;
+    color: #374151;
+    margin-bottom: 10px;
+}
+
+.versiculo {
+    font-size: 1.1rem;
+    color: #F97316;
+    font-style: italic;
+    margin-bottom: 40px;
+}
+
+.version {
+    margin-top: 40px;
+    color: #6B7280;
+    font-size: 0.9rem;
+}
