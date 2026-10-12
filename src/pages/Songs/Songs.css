@@ -1,19 +1,54 @@
-.songs{
+.songs-page{
 
-    padding:40px;
+    min-height:100vh;
+
+    background:#F4F7FC;
+
+    padding:50px;
+
+    text-align:center;
 
 }
 
-.songs h1{
+
+.songs-page h1{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:15px;
+
+    font-size:3.5rem;
 
     color:#1E3A8A;
 
-    margin-bottom:15px;
+}
+
+
+.songs-subtitle{
+
+    font-size:1.3rem;
+
+    color:#666;
+
+    margin-bottom:50px;
 
 }
 
-.songs p{
 
-    color:#666;
+.songs-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+    gap:30px;
+
+    max-width:1000px;
+
+    margin:auto;
 
 }

@@ -1,0 +1,64 @@
+.song-detail{
+
+    min-height:100vh;
+
+    background:#F4F7FC;
+
+    padding:50px;
+
+    text-align:center;
+
+}
+
+
+.song-detail h1{
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:15px;
+
+    color:#1E3A8A;
+
+    font-size:3rem;
+
+}
+
+
+
+.song-info{
+
+    font-size:1.3rem;
+
+    color:#666;
+
+}
+
+
+
+.song-box{
+
+    background:white;
+
+    max-width:800px;
+
+    margin:30px auto;
+
+    padding:30px;
+
+    border-radius:20px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.10);
+
+}
+
+
+
+.song-box h2{
+
+    color:#1E3A8A;
+
+}

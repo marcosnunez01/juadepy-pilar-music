@@ -1,0 +1,51 @@
+.song-card{
+
+    width:260px;
+
+    min-height:200px;
+
+    border-radius:20px !important;
+
+    text-align:center;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+
+.song-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 15px 35px rgba(0,0,0,.15);
+
+}
+
+
+.song-icon{
+
+    font-size:45px !important;
+
+    color:#1E3A8A;
+
+    margin-bottom:15px;
+
+}
+
+
+.song-title{
+
+    font-weight:700 !important;
+
+    color:#1E3A8A;
+
+}
+
+
+.song-card p{
+
+    color:#555;
+
+}

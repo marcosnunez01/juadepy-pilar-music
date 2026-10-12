@@ -9,7 +9,10 @@ import PianoIcon from '@mui/icons-material/Piano'
 import QueueMusicIcon from '@mui/icons-material/QueueMusic'
 import SettingsIcon from '@mui/icons-material/Settings'
 import Sidebar from '../components/Sidebar/Sidebar'
+import { useNavigate } from 'react-router-dom'
 function Dashboard() {
+
+    const navigate = useNavigate()
 
     return (
 
@@ -28,9 +31,13 @@ function Dashboard() {
             <div className="dashboard-grid">
 
                 <DashboardCard
-                    icono={<MusicNoteIcon />}
-                    titulo="Cancionero"
-                />
+    icono={<MusicNoteIcon />}
+    titulo="Cancionero"
+    onClick={() => {
+        console.log("CLICK CANCIONERO")
+        navigate('/songs')
+    }}
+/>
 
                 <DashboardCard
                     icono={<EventIcon />}

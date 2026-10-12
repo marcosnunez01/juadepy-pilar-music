@@ -8,10 +8,14 @@ function DashboardCard({ icono, titulo, onClick }) {
 
     return (
 
-        <Card
-            className="dashboard-card"
-            onClick={onClick}
-        >
+       <Card
+    className="dashboard-card"
+    onClick={() => {
+        console.log("CLICK EN TARJETA")
+        onClick()
+    }}
+    sx={{ cursor: 'pointer' }}
+>
 
             <CardContent>
 

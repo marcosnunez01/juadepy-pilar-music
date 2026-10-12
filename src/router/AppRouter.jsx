@@ -3,6 +3,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import Home from '../pages/Home'
 import Dashboard from '../pages/Dashboard'
 import Songs from '../pages/Songs/Songs'
+import SongDetail from '../pages/SongDetail/SongDetail'
+
 
 function AppRouter() {
 
@@ -26,6 +28,11 @@ function AppRouter() {
                     path="/songs"
                     element={<Songs />}
                 />
+
+                <Route
+    path="/song/:id"
+    element={<SongDetail />}
+/>
 
             </Routes>
 

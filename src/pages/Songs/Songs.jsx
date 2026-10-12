@@ -1,21 +1,68 @@
 import './Songs.css'
+import { useState } from 'react'
+import SongCard from '../../components/SongCard/SongCard'
+import songsData from '../../data/songsData'
+
+import MusicNoteIcon from '@mui/icons-material/MusicNote'
+
+
 
 function Songs() {
 
+    const [busqueda, setBusqueda] = useState('')
+
     return (
 
-        <div className="songs">
+        <div className="songs-page">
 
-            <h1>🎵 Cancionero</h1>
+            <h1>
+                <MusicNoteIcon />
+                Cancionero
+            </h1>
 
-            <p>
-                Aquí aparecerán todas las canciones.
+            <p className="songs-subtitle">
+                Biblioteca musical de JUADEPY PILAR MUSIC
             </p>
+            
+            <input
+
+                className="search-input"
+
+                type="text"
+
+                placeholder="Buscar canción..."
+
+                value={busqueda}
+
+                onChange={(e) => setBusqueda(e.target.value)}
+
+             />
+
+            <div className="songs-grid">
+
+                {
+                    songsData.map((song) => (
+
+                        <SongCard
+                            key={song.id}
+
+                            id={song.id}
+                            titulo={song.titulo}
+                            tono={song.tono}
+                            categoria={song.categoria}
+                        />
+
+                    ))
+                }
+
+            </div>
+
 
         </div>
 
     )
 
 }
+
 
 export default Songs
