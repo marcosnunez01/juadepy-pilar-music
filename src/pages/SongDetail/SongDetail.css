@@ -1,64 +1,320 @@
-.song-detail{
 
-    min-height:100vh;
+.song-detail {
+    --music-blue: #1E3A8A;
+    --music-orange: #F97316;
+    --music-dark: #172554;
 
-    background:#F4F7FC;
-
-    padding:50px;
-
-    text-align:center;
-
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 28px;
+    color: #172554;
+    box-sizing: border-box;
 }
 
-
-.song-detail h1{
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    gap:15px;
-
-    color:#1E3A8A;
-
-    font-size:3rem;
-
+.song-detail * {
+    box-sizing: border-box;
 }
 
+/* Botones de navegación */
 
-
-.song-info{
-
-    font-size:1.3rem;
-
-    color:#666;
-
+.back-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    min-height: 46px;
+    padding: 12px 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 14px;
+    background: linear-gradient(145deg, #2850ad, #1E3A8A);
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow:
+        0 5px 0 #14285f,
+        0 9px 18px rgba(30, 58, 138, 0.2);
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
 }
 
-
-
-.song-box{
-
-    background:white;
-
-    max-width:800px;
-
-    margin:30px auto;
-
-    padding:30px;
-
-    border-radius:20px;
-
-    box-shadow:0 10px 25px rgba(0,0,0,.10);
-
+.back-button:hover {
+    background: linear-gradient(145deg, #F97316, #ea580c);
+    box-shadow:
+        0 5px 0 #b9440b,
+        0 10px 22px rgba(249, 115, 22, 0.25);
+    transform: translateY(-2px);
 }
 
+.back-button:active {
+    transform: translateY(3px);
+    box-shadow: 0 2px 0 #14285f;
+}
 
+.back-button:focus-visible {
+    outline: 3px solid #FDBA74;
+    outline-offset: 4px;
+}
 
-.song-box h2{
+.back-button svg {
+    font-size: 21px;
+}
 
-    color:#1E3A8A;
+/* Encabezado de la canción */
 
+.song-detail-header {
+    position: relative;
+    overflow: hidden;
+    margin: 28px 0;
+    padding: 36px 28px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 26px;
+    background:
+        radial-gradient(
+            circle at 90% 10%,
+            rgba(249, 115, 22, 0.3),
+            transparent 35%
+        ),
+        linear-gradient(135deg, #172554, #1E3A8A 70%, #2448a0);
+    color: #ffffff;
+    text-align: center;
+    box-shadow:
+        0 10px 0 #12204b,
+        0 18px 35px rgba(23, 37, 84, 0.2);
+}
+
+.song-detail-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 66px;
+    height: 66px;
+    margin: 0 auto 18px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 20px;
+    background: linear-gradient(145deg, #fb923c, #ea580c);
+    color: #ffffff;
+    box-shadow:
+        0 6px 0 #a33c0a,
+        0 12px 22px rgba(0, 0, 0, 0.2);
+}
+
+.song-detail-icon svg {
+    font-size: 36px;
+}
+
+.song-detail-label {
+    margin: 0 0 10px;
+    color: #FDBA74;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+.song-detail-header h1 {
+    margin: 0;
+    color: #ffffff;
+    font-size: clamp(28px, 5vw, 42px);
+    line-height: 1.2;
+    overflow-wrap: anywhere;
+}
+
+.song-detail-subtitle {
+    margin: 12px 0 24px;
+    color: #dbeafe;
+    font-size: 15px;
+}
+
+.song-metadata {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+}
+
+.song-meta-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 15px;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    font-size: 14px;
+}
+
+.song-meta-item svg {
+    color: #FDBA74;
+    font-size: 20px;
+}
+
+/* Tarjetas de letra y acordes */
+
+.song-box {
+    margin: 22px 0;
+    padding: 26px;
+    border: 1px solid #e2e8f0;
+    border-radius: 22px;
+    background: #ffffff;
+    box-shadow:
+        0 5px 0 #e2e8f0,
+        0 12px 28px rgba(15, 23, 42, 0.07);
+}
+
+.song-box-title {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 22px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.song-box-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    border-radius: 15px;
+    background: #dbeafe;
+    color: #1E3A8A;
+}
+
+.song-box-icon svg {
+    font-size: 27px;
+}
+
+.song-box-title h2 {
+    margin: 0;
+    color: #172554;
+    font-size: 22px;
+}
+
+.song-box-title p {
+    margin: 4px 0 0;
+    color: #64748b;
+    font-size: 13px;
+}
+
+.song-lyrics {
+    color: #334155;
+    font-size: 17px;
+    line-height: 1.95;
+    white-space: pre-line;
+    overflow-wrap: anywhere;
+}
+
+.song-chords-box {
+    border-color: #fed7aa;
+    background: linear-gradient(145deg, #ffffff, #fff7ed);
+}
+
+.chords-icon {
+    background: #ffedd5;
+    color: #c2410c;
+}
+
+.song-chords {
+    padding: 18px;
+    border: 1px solid #fed7aa;
+    border-radius: 14px;
+    background: #ffffff;
+    color: #9a3412;
+    font-size: 20px;
+    font-weight: 800;
+    line-height: 1.8;
+    overflow-wrap: anywhere;
+    white-space: pre-line;
+}
+
+/* Pie de página */
+
+.song-detail-footer {
+    margin: 30px 0 22px;
+    color: #64748b;
+    font-size: 13px;
+    font-style: italic;
+    text-align: center;
+}
+
+.back-button-bottom {
+    margin-bottom: 20px;
+}
+
+.song-not-found {
+    text-align: center;
+}
+
+.song-not-found h1 {
+    margin: 35px 0 20px;
+}
+
+/* Adaptación a celulares */
+
+@media (max-width: 600px) {
+    .song-detail {
+        padding: 16px;
+    }
+
+    .back-button {
+        min-height: 44px;
+        padding: 11px 15px;
+        font-size: 13px;
+    }
+
+    .song-detail-header {
+        margin: 22px 0;
+        padding: 28px 18px;
+        border-radius: 20px;
+    }
+
+    .song-detail-icon {
+        width: 58px;
+        height: 58px;
+    }
+
+    .song-detail-label {
+        font-size: 10px;
+        letter-spacing: 1.5px;
+    }
+
+    .song-detail-subtitle {
+        font-size: 14px;
+    }
+
+    .song-meta-item {
+        padding: 9px 11px;
+        font-size: 12px;
+    }
+
+    .song-box {
+        padding: 20px 16px;
+        border-radius: 18px;
+    }
+
+    .song-box-title h2 {
+        font-size: 20px;
+    }
+
+    .song-lyrics {
+        font-size: 16px;
+        line-height: 1.85;
+    }
+
+    .song-chords {
+        padding: 14px;
+        font-size: 18px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .back-button {
+        transition: none;
+    }
 }
