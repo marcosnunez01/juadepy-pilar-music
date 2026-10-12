@@ -11,8 +11,11 @@ function Songs() {
 
     const [busqueda, setBusqueda] = useState('')
 
-    return (
+    const cancionesFiltradas = songsData.filter((song) =>
+        song.titulo.toLowerCase().includes(busqueda.toLowerCase())
+    )
 
+    return (
         <div className="songs-page">
 
             <h1>
@@ -41,7 +44,7 @@ function Songs() {
             <div className="songs-grid">
 
                 {
-                    songsData.map((song) => (
+                    cancionesFiltradas.map((song) => (
 
                         <SongCard
                             key={song.id}
